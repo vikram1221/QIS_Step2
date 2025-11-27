@@ -7,7 +7,7 @@ from app.components.layouts import app_layout, register_callbacks
 
 
 # Import local components
-from components.charts import(
+from app.components.charts import(
     plot_cumulative_return, plot_long_short, 
     plot_rolling_sharpe, plot_drawdown
 )
@@ -86,4 +86,5 @@ server = app.server
 # Allow local running
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8050)
+
 
