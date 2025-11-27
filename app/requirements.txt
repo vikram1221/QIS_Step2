@@ -1,5 +1,7 @@
-dash
-dash-bootstrap-components
 pandas
 numpy
+dash
+dash-bootstrap-components
 gunicorn
+plotly
+pyarrow
