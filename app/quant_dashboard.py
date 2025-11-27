@@ -13,11 +13,11 @@ from components.charts import(
 )
 
 # Load Data
-base_path = r"C:\Users\vikra\OneDrive\Desktop\Python Trading Programs\QIS_Step_2"
+base_path = os.path.dirname(os.path.abspath(__file__))
 
-momentum = pd.read_parquet(os.path.join(base_path, "momentum_portfolio.parquet"))
-value = pd.read_parquet(os.path.join(base_path, "value_portfolio.parquet"))
-multi = pd.read_parquet(os.path.join(base_path, "multi_factor_portfolio.parquet"))
+momentum = pd.read_parquet(os.path.join(base_path, "..", "momentum_portfolio.parquet"))
+value = pd.read_parquet(os.path.join(base_path, "..", "value_portfolio.parquet"))
+multi = pd.read_parquet(os.path.join(base_path, "..", "multi_factor_portfolio.parquet"))
 
 
 # Dash App
@@ -80,6 +80,9 @@ def update_multi(_):
     )
 
 
-# Run App
+# Expose server for Render/Gunicorn
+server = app.server
+
+# Allow local running
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8050)
