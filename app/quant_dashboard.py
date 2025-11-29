@@ -1,5 +1,6 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import pandas as pd
-import os
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
@@ -84,4 +85,5 @@ server = app.server
 
 # Allow local running
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=8050)
