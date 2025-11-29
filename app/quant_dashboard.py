@@ -4,12 +4,11 @@ import pandas as pd
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
-from components.layouts import app_layout, register_callbacks
+from app.components.layouts import app_layout, register_callbacks
 
 
-# Import local components
-from components.charts import(
-    plot_cumulative_return, plot_long_short, 
+from app.components.charts import (
+    plot_cumulative_return, plot_long_short,
     plot_rolling_sharpe, plot_drawdown
 )
 
@@ -87,4 +86,5 @@ server = app.server
 if __name__ == "__main__":
 
     app.run(host="0.0.0.0", port=8050)
+
 
