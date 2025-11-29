@@ -3,11 +3,11 @@ import os
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
-from app.components.layouts import app_layout, register_callbacks
+from components.layouts import app_layout, register_callbacks
 
 
 # Import local components
-from app.components.charts import(
+from components.charts import(
     plot_cumulative_return, plot_long_short, 
     plot_rolling_sharpe, plot_drawdown
 )
@@ -15,10 +15,9 @@ from app.components.charts import(
 # Load Data
 base_path = os.path.dirname(os.path.abspath(__file__))
 
-momentum = pd.read_parquet(os.path.join(base_path, "..", "momentum_portfolio.parquet"))
-value = pd.read_parquet(os.path.join(base_path, "..", "value_portfolio.parquet"))
-multi = pd.read_parquet(os.path.join(base_path, "..", "multi_factor_portfolio.parquet"))
-
+momentum = pd.read_parquet("momentum_portfolio.parquet")
+value = pd.read_parquet("value_portfolio.parquet")
+multi = pd.read_parquet("multi_factor_portfolio.parquet")
 
 # Dash App
 app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
@@ -86,5 +85,3 @@ server = app.server
 # Allow local running
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8050)
-
-
