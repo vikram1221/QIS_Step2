@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pandas as pd
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
@@ -87,3 +87,4 @@ server = app.server
 if __name__ == "__main__":
 
     app.run(host="0.0.0.0", port=8050)
+
