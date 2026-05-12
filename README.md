@@ -1,4 +1,4 @@
-# Making Different Portfolios, Backtesting and Visualising
+# Making Portfolios, Backtesting and Visualising
 
 This project builds the full data pipeline that powers the factor research. It downloads S&P 500 tickers and price history, constructs clean price and returns panels, processes fundamental data, and generates both momentum and value signals. These signals are then transformed into investable momentum, value, and multi-factor portfolios. The project also includes an optional interactive Dash dashboard for visualizing cumulative returns, long/short performance, Sharpe ratios, and drawdowns.
 
