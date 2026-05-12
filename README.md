@@ -33,8 +33,8 @@ This project builds the full data pipeline that powers the factor research. It d
    → Build momentum, value, and multi-factor portfolios  
    → Outputs: `momentum_portfolio.parquet`, `value_portfolio.parquet`, `multi_factor_portfolio.parquet`
 
-10. *(Optional)* `view_panels.py`  
+10. `view_panels.py`  
     → Inspects any panel/parquet file
 
-11. *(Optional)* `app/quant_dashboard.py`  
+11. `app/quant_dashboard.py`  
     → Launches Dash dashboard to visualize portfolios
